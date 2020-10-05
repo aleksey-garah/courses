@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/courses/courses.module').then(m => m.CoursesModule)
   },
   {
+    path: 'course-details/:id',
+    loadChildren: () => import('./modules/course-details/course-details.module').then(m => m.CourseDetailsModule)
+  },
+  {
     path: '**',
     redirectTo: 'courses',
     pathMatch: 'full'

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterPanelModel } from '../../../../models';
 
 @Component({
   selector: 'app-courses-list',
@@ -10,6 +11,10 @@ export class CoursesListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public onFiltersChanged(filtersData: FilterPanelModel): void {
+    console.log(filtersData);
   }
 
 }

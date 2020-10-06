@@ -1,0 +1,25 @@
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 0;
+
+  &-title {
+    color: #919191;
+    margin: 0 20px 0 0;
+  }
+
+  &-clear-button {
+    cursor: pointer;
+    margin-left: 15px;
+  }
+}
+
+.filter-search {
+  justify-self: right;
+  margin-left: auto;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+}

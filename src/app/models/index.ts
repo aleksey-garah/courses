@@ -3,3 +3,4 @@ export * from './dto/course-details-dto.model';
 export * from './dto/course-instructor-dto.model';
 
 export * from './course-status';
+export * from './filter-panel.model';

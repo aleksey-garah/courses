@@ -1,0 +1,28 @@
+<div class="filters">
+  <p class="filters-title">Filter by:</p>
+  <div class="filters-panel">
+
+    <div class="filter-status">
+      <div class="btn-group" dropdown>
+        <button id="button-disabled-menu" dropdownToggle type="button" class="btn dropdown-toggle"
+                aria-controls="dropdown-disabled-menu">
+          {{selectedFilters.status || statusSelectDefault}} <span class="caret"></span>
+        </button>
+        <ul id="dropdown-disabled-menu" *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-disabled-menu">
+          <li *ngFor="let status of statusesList" role="menuitem">
+            <a class="dropdown-item" (click)="selectStatus(status)">{{status}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <button type="button" class="btn btn-link" (click)="clearFilters()">Clear</button>
+  <div [formGroup]="searchForm" class="filter-search">
+    <div class="form-group">
+      <label for="searchText" class="sr-only">Search courses</label>
+      <input type="text" class="form-control" id="searchText" placeholder="Search courses" formControlName="text">
+    </div>
+  </div>
+</div>

@@ -16,6 +16,6 @@ export class CoursesHttpService {
   }
 
   public getCourseById(courseId: number): Observable<CourseDetailsDtoModel> {
-    return this.http.get<CourseDetailsDtoModel>(`${this.appConfig.apiUrl}/course/${courseId}`);
+    return this.http.get<CourseDetailsDtoModel>(`${this.appConfig.apiUrl}/courses/${courseId}`);
   }
 }

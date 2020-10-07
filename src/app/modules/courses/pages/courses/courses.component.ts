@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CoursesHttpService} from "../../../core/http";
+import {CourseDtoModel} from "../../../../models";
+import {Observable} from "rxjs/internal/Observable";
 
 @Component({
   selector: 'app-courses',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  constructor() { }
+  public courses$: Observable<CourseDtoModel[]>;
+
+  constructor(private coursesHttpService: CoursesHttpService) { }
 
   ngOnInit(): void {
+    this.courses$ = this.coursesHttpService.getCourses();
   }
 
 }

@@ -3,7 +3,7 @@
     <div class="row">
       <h1 class="courses-title col-12">Courses</h1>
       <div class="courses-body col-12">
-        <app-courses-list></app-courses-list>
+        <app-courses-list [coursesData]="courses$ | async"></app-courses-list>
       </div>
     </div>
   </div>

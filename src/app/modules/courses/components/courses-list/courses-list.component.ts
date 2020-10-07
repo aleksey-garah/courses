@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FilterPanelModel } from '../../../../models';
+import { Component, Input, OnInit } from '@angular/core';
+import { CourseDtoModel, FilterPanelModel } from '../../../../models';
 
 @Component({
   selector: 'app-courses-list',
@@ -7,6 +7,8 @@ import { FilterPanelModel } from '../../../../models';
   styleUrls: ['./courses-list.component.scss']
 })
 export class CoursesListComponent implements OnInit {
+
+  @Input() public coursesData: CourseDtoModel[];
 
   constructor() { }
 

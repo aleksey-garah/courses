@@ -1,33 +1,37 @@
 <div class="course-details">
   <div class="container">
-    <div class="row">
-      <h1 class="course-details-title col-12">Course <span>Course Name</span></h1>
-    </div>
-    <div class="course-details-body row">
+    <ng-container *ngIf="courseDetails">
+      <div class="row">
+        <h1 class="course-details-title col-12">Course <span>{{courseDetails.name}}</span></h1>
+      </div>
+      <div class="course-details-body row">
 
-      <div class="col-md-6">
-        <div class="course-details-block">
-          <p class="course-details-block-title">Course name</p>
-          <div class="course-details-block-content">Course Name</div>
-        </div>
-        <div class="course-details-block">
-          <p class="course-details-block-title">Course card image</p>
-          <div class="course-details-block-content">
-            <img class="course-details-img" [src]="'https://picsum.photos/300/300'" alt="">
+        <div class="col-md-6">
+          <div class="course-details-block">
+            <p class="course-details-block-title">Course name</p>
+            <div class="course-details-block-content">{{courseDetails.name}}</div>
+          </div>
+          <div class="course-details-block">
+            <p class="course-details-block-title">Course card image</p>
+            <div class="course-details-block-content">
+              <img class="course-details-img" [src]="courseDetails.images ? courseDetails.images[0] : ''" alt="">
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="course-details-block">
-          <p class="course-details-block-title">Course status</p>
-          <div class="course-details-block-content">Draft</div>
+        <div class="col-md-6">
+          <div class="course-details-block">
+            <p class="course-details-block-title">Course status</p>
+            <div class="course-details-block-content">{{courseDetails.status}}</div>
+          </div>
+          <div class="course-details-block">
+            <p class="course-details-block-title">Instructor</p>
+            <div class="course-details-block-content">
+              {{courseDetails.instructors ? courseDetails.instructors[0].name : ''}}
+            </div>
+          </div>
         </div>
-        <div class="course-details-block">
-          <p class="course-details-block-title">Instructor</p>
-          <div class="course-details-block-content">Roli jain</div>
-        </div>
-      </div>
 
-    </div>
+      </div>
+    </ng-container>
   </div>
 </div>

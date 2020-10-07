@@ -1,22 +1,24 @@
 <div class="courses-list">
   <app-courses-filter-panel (filtersChanged)="onFiltersChanged($event)"></app-courses-filter-panel>
 
-  <table class="table courses-table">
-    <thead>
-    <tr>
-      <th scope="col">IВ</th>
-      <th scope="col">Image</th>
-      <th scope="col">Name</th>
-      <th scope="col">Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><img class="course-img" [src]='"https://picsum.photos/300/300"' alt=""></td>
-      <td><a [routerLink]="['/course-details/' + 2]">Name</a></td>
-      <td><div class="course-status">published</div></td>
-    </tr>
-    </tbody>
-  </table>
+  <ng-container *ngIf="coursesData">
+    <table class="table courses-table">
+      <thead>
+      <tr>
+        <th scope="col">IВ</th>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let course of coursesData">
+        <th scope="row">{{course.id}}</th>
+        <td><img class="course-img" [src]='course.imageUrl' alt=""></td>
+        <td><a [routerLink]="['/course-details/' + course.id]">{{course.name}}</a></td>
+        <td><div class="course-status">{{course.status}}</div></td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
 </div>

@@ -1,10 +1,10 @@
 <div class="courses-list">
   <app-courses-filter-panel (filtersChanged)="onFiltersChanged($event)"></app-courses-filter-panel>
 
-  <table class="table table-hover">
+  <table class="table courses-table">
     <thead>
     <tr>
-      <th scope="col">Id</th>
+      <th scope="col">IВ</th>
       <th scope="col">Image</th>
       <th scope="col">Name</th>
       <th scope="col">Status</th>
@@ -13,20 +13,9 @@
     <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <td><img class="course-img" [src]='"https://picsum.photos/300/300"' alt=""></td>
+      <td><a [routerLink]="['/course-details/' + 2]">Name</a></td>
+      <td><div class="course-status">published</div></td>
     </tr>
     </tbody>
   </table>

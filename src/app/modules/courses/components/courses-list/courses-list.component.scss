@@ -1,0 +1,22 @@
+.courses-table {
+  tr {
+    th, td {
+      vertical-align: middle;
+    }
+  }
+}
+
+.course {
+  &-status {
+    padding: 5px;
+    text-transform: uppercase;
+    border: 1px solid #2E8B57;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  &-img {
+    height: 50px;
+  }
+}

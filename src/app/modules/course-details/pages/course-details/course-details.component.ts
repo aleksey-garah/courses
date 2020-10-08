@@ -22,7 +22,7 @@ export class CourseDetailsComponent extends BaseComponent implements OnInit {
     this.subscribeOnParams();
   }
 
-  private subscribeOnParams() {
+  private subscribeOnParams(): void {
     this.route.params
       .pipe(
         takeUntil(this.destruct$),
@@ -32,6 +32,6 @@ export class CourseDetailsComponent extends BaseComponent implements OnInit {
         })
       ).subscribe((courseDetails) => {
         this.courseDetails = courseDetails;
-    })
+    });
   }
 }

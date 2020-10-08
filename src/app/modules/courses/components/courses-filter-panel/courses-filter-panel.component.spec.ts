@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoursesFilterPanelComponent } from './courses-filter-panel.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('CoursesFilterPanelComponent', () => {
   let component: CoursesFilterPanelComponent;
@@ -9,7 +9,7 @@ describe('CoursesFilterPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
+      imports: [ ReactiveFormsModule ],
       declarations: [ CoursesFilterPanelComponent ]
     })
     .compileComponents();

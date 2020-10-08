@@ -1,7 +1,7 @@
 <div class="courses-list">
   <app-courses-filter-panel (filtersChanged)="onFiltersChanged($event)"></app-courses-filter-panel>
 
-  <ng-container *ngIf="coursesData">
+  <ng-container *ngIf="filteredCourses">
     <table class="table courses-table">
       <thead>
       <tr>
@@ -12,7 +12,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let course of coursesData">
+      <tr *ngFor="let course of filteredCourses">
         <th scope="row">{{course.id}}</th>
         <td><img class="course-img" [src]='course.imageUrl' alt=""></td>
         <td><a [routerLink]="['/course-details/' + course.id]">{{course.name}}</a></td>
